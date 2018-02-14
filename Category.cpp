@@ -13,12 +13,58 @@
 
 #include "Category.h"
 
-Category::Category() {
+// default constructor
+Category::Category()
+{
+    this -> categoryName = "";
+    this -> totalSubCatNo = 0;
 }
 
-Category::Category(const Category& orig) {
+// copy constructor
+Category::Category(const Category& orig)
+{
+    this -> categoryName = orig.categoryName;
+    
+    for (int i = 0; i < orig.totalSubCatNo; i++)
+        this -> subCategory[i] = orig.subCategory[i];
+    
+    this -> totalSubCatNo = orig.totalSubCatNo;
 }
 
-Category::~Category() {
+// deconstructor
+Category::~Category()
+{
 }
 
+// accessor functions
+string Category::getCatName() const
+{
+    return this -> categoryName;
+}
+
+SubCategory Category::getSubCat(int index) const
+{
+    return this -> subCategory[index];
+}
+
+int Category::getTotalSubCatNo() const
+{
+    return this -> totalSubCatNo;
+}
+
+// mutator functions
+void Category::setCatName(string catName)
+{
+    this -> categoryName = catName;
+}
+
+void Category::setSubCategory(int index, SubCategory sc)
+{
+    this -> subCategory[index] = sc;
+}
+
+/* definitions to be added */
+void Category::setTotalSubCatNo()
+{
+    
+}

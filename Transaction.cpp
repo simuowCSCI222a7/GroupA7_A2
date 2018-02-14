@@ -13,12 +13,42 @@
 
 #include "Transaction.h"
 
-Transaction::Transaction() {
+// default constructor
+Transaction::Transaction()
+{
+    this -> transactionQty = 0;
+    this -> transactionDate = "";
 }
 
-Transaction::Transaction(const Transaction& orig) {
+// copy constructor
+Transaction::Transaction(const Transaction& orig)
+{
+    this -> transactionQty = orig.transactionQty;
+    this -> transactionDate = orig.transactionDate;
 }
 
-Transaction::~Transaction() {
+// deconstructor
+Transaction::~Transaction()
+{
 }
 
+// accessor functions
+int Transaction::getTransactionQty() const
+{
+    return this -> transactionQty;
+}
+string Transaction::getTransactionDate() const
+{
+    return this -> transactionDate;
+}
+
+// mutator functions
+void Transaction::setTransactionQty(int tQty)
+{
+    this -> transactionQty = tQty;
+}
+
+void Transaction::setTransactionDate(string tDate)
+{
+    this -> transactionDate = tDate;
+}

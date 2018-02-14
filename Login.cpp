@@ -12,13 +12,47 @@
  */
 
 #include "Login.h"
+#include <iostream>
+#include <cstring>
 
-Login::Login() {
+using namespace std;
+
+// default constructor
+Login::Login()
+{
+    // default constructor for all staff
 }
 
-Login::Login(const Login& orig) {
+// copy constructor
+Login::Login(const Login& orig)
+{
+    for (int i = 0; i < orig.totalStaffNo; i++)
+        this -> staff[i] = orig.staff[i];
 }
 
-Login::~Login() {
+// deconstructor
+Login::~Login()
+{
 }
 
+// accessor functions
+Staff Login::getStaff(int index) const
+{
+    return this -> staff[index];
+}
+
+int Login::getTotalStaffNo() const
+{
+    return this -> totalStaffNo;
+}
+
+// mutator functions
+void Login::setStaff(int index, Staff s)
+{
+    this -> staff[index] = s;
+}
+
+void Login::setTotalStaffNo()
+{
+    // definition to be added
+}

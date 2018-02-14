@@ -14,13 +14,35 @@
 #ifndef STAFF_H
 #define STAFF_H
 
-class Staff {
-public:
-    Staff();
-    Staff(const Staff& orig);
-    virtual ~Staff();
-private:
+#include <iostream>
+#include <cstring>
 
+using namespace std;
+
+class Staff
+{
+    public:
+        enum status {Open, Locked};
+        
+        // constructors
+        Staff();
+        Staff(const Staff& orig);
+        virtual ~Staff();
+        
+        // accessor functions
+        string getStaffID() const;
+        string getStaffPassword() const;
+        status getStaffStatus() const;
+        
+        // mutator functions
+        void setStaffID(string);
+        void setStaffPassword(string);
+        void setStaffStatus(status);
+        
+    private:
+        string staffID;
+        string staffPassword;
+        status staffStatus;
 };
 
 #endif /* STAFF_H */

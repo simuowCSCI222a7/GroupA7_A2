@@ -14,13 +14,35 @@
 #ifndef TRANSACTION_H
 #define TRANSACTION_H
 
-class Transaction {
-public:
-    Transaction();
-    Transaction(const Transaction& orig);
-    virtual ~Transaction();
-private:
+#include <iostream>
+#include <cstring>
 
+using namespace std;
+
+class Transaction
+{
+    public:
+        // constructors
+        Transaction();
+        Transaction(const Transaction& orig);
+        virtual ~Transaction();
+        
+        // accessor functions
+        int getTransactionQty() const;
+        string getTransactionDate() const;
+        
+        // mutator functions
+        void setTransactionQty(int);
+        void setTransactionDate(string);
+        
+        // utility functions
+        /* definitions to be added */
+        void printTransaction() const;
+        /* end definitions to be added */
+        
+    private:
+        int transactionQty;
+        string transactionDate;
 };
 
 #endif /* TRANSACTION_H */

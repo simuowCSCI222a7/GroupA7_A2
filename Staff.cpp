@@ -12,13 +12,60 @@
  */
 
 #include "Staff.h"
+#include <iostream>
+#include <cstring>
 
-Staff::Staff() {
+using namespace std;
+
+// default constructor
+Staff::Staff()
+{
+    this -> staffID = "";
+    this -> staffPassword = "";
+    this -> staffStatus = Open;
 }
 
-Staff::Staff(const Staff& orig) {
+// copy constructor
+Staff::Staff(const Staff& orig)
+{
+    this -> staffID = orig.staffID;
+    this -> staffPassword = orig.staffPassword;
+    this -> staffStatus = orig.staffStatus;
 }
 
-Staff::~Staff() {
+// deconstructor
+Staff::~Staff()
+{
 }
 
+// accessor functions
+string Staff::getStaffID() const
+{
+    return this -> staffID;
+}
+
+string Staff::getStaffPassword() const
+{
+    return this -> staffPassword;
+}
+
+Staff::status Staff::getStaffStatus() const
+{
+    return this -> staffStatus;
+}
+
+// mutator functions
+void Staff::setStaffID(string ID)
+{
+    this -> staffID = ID;
+}
+
+void Staff::setStaffPassword(string password)
+{
+    this -> staffPassword = password;
+}
+
+void Staff::setStaffStatus(status s)
+{
+    this -> staffStatus = s;
+}
